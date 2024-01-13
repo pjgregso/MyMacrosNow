@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Intake Tracker</title>
+    <script>
+        async function sendFoodData() {
+            const userInput = document.getElementById('userInput').value;
+            const response = await fetch('http://localhost:5000/ask', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ user_input: userInput })
+            });
+
+            const data = await response.json();
+            document.getElementById('response').innerText = data;
+        }
+    </script>
+</head>
+<body>
+    <h1>What did you eat today?</h1>
+    <textarea id="userInput" placeholder="Type colloquially what you ate today..."></textarea><br>
+    <button onclick="sendFoodData()">Submit</button>
+    <h2>Response from Nutrition Expert:</h2>
+    <p id="response"></p>
+</body>
+</html>
