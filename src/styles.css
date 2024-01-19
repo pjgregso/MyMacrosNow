@@ -85,6 +85,14 @@ h3 {
     max-width: 500px; /* Consistent with textarea width */
 }
 
+.privacy-policy-link {
+    color: grey;
+    font-size: small;
+    text-align: center;
+    margin-top: 50px;
+    text-decoration: none;
+}
+
 @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.1); }
