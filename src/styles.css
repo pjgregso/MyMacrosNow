@@ -13,8 +13,6 @@
     box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
     transition: transform 0.3s ease;
 }
-
-
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f7f6;
@@ -23,46 +21,69 @@ body {
     padding: 20px;
     max-width: 800px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
 }
 
 h1, h2 {
     color: #32a852;
+    margin-bottom: 20px;
 }
 
 textarea {
     width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 8px;
+    max-width: 500px; /* Limit max width for larger screens */
+    padding: 15px;
+    margin: 10px 0;
+    border: 2px solid #32a852;
+    border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(50, 168, 82, 0.2);
     font-size: 16px;
-    color: #333;
+    resize: none; /* Prevents resizing the textarea */
 }
 
 button {
-    background-color: #32a852; /* Bright green */
+    background-color: #32a852;
     color: white;
     border: none;
-    padding: 12px 20px;
-    margin: 10px 0;
-    border-radius: 20px;
+    padding: 15px 30px;
+    margin: 10px;
+    border-radius: 30px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 button:hover {
-    background-color: #2a8b43; /* Darker shade for hover effect */
+    background-color: #2a8b43;
+    transform: scale(1.05);
 }
 
+h3 {
+    font-size: 36px; /* Or any size that suits your design */
+    margin-top: 0;
+    color: #32a852; /* Adjust the color as needed */
+}
 
-#response {
-    background-color: #e8f5e9; /* Light green background */
+#companyLogo {
+    width: 100px; /* Adjust as necessary */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#response, #recordingSavedMsg {
+    background-color: #e8f5e9;
     padding: 15px;
     margin-top: 15px;
-    border-radius: 8px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px; /* Consistent with textarea width */
 }
-
 
 @keyframes pulse {
     0% { transform: scale(1); }
