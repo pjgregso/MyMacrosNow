@@ -3,28 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Intake Tracker</title>
-    <script>
-        async function sendFoodData() {
-            const userInput = document.getElementById('userInput').value;
-            const response = await fetch('http://localhost:5000/ask', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ user_input: userInput })
-            });
-
-            const data = await response.json();
-            document.getElementById('response').innerText = data;
-        }
-    </script>
+    <title>MyMacrosNow</title>
+    <link rel="stylesheet" href="./src/styles.css">
 </head>
 <body>
     <h1>What did you eat today?</h1>
-    <textarea id="userInput" placeholder="Type colloquially what you ate today..."></textarea><br>
+    <textarea id="userInput" placeholder="Click the mic and speak (or be old-school and type) about colloquially what you ate today..."></textarea><br>
+
+    <button id="microphoneBtn" class="microphone">
+        <img src="./img/mic2.webp" alt="Microphone"/> 
+    </button>
+    <button id="recordAgainBtn" style="display:none;">Record Again</button>
+    <p id="recordingSavedMsg" style="display:none;">Recording Saved</p>
+    <!-- Rest of your body content -->
     <button onclick="sendFoodData()">Submit</button>
+
     <h2>Response from Nutrition Expert:</h2>
     <p id="response"></p>
+
+    <script src="./src/script.js"></script>
 </body>
 </html>
